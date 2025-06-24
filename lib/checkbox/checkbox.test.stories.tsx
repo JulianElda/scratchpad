@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { CheckboxProps } from "lib/checkbox/checkbox.types";
+import type { CheckboxProps } from "lib/checkbox/checkbox.types";
 import { useState } from "react";
 import { expect } from "storybook/test";
 import { Checkbox } from "./checkbox";
@@ -8,8 +8,8 @@ import { checkboxProps } from "./checkbox.mocks";
 const CheckboxTemplate = (args: CheckboxProps) => {
   const [value, setValue] = useState<boolean>(args.value ?? true);
 
-  const handleChange = (newVal: boolean) => {
-    setValue(newVal);
+  const handleChange = (newValue: boolean) => {
+    setValue(newValue);
   };
 
   return (
@@ -42,7 +42,7 @@ export const TestElements: Story = {
   args: {
     ...checkboxProps,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(checkboxProps.id)).toBeInTheDocument();
     await expect(
       canvas.getByLabelText(checkboxProps.label)
@@ -60,7 +60,7 @@ export const TestElementsWithoutLabel: Story = {
     ...checkboxProps,
     hideLabel: true,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(checkboxProps.id)).toBeInTheDocument();
     await expect(
       canvas.getByLabelText(checkboxProps.label)
@@ -77,7 +77,7 @@ export const CheckboxInitialChecked: Story = {
   args: {
     ...checkboxProps,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(checkboxProps.id)).toBeChecked();
   },
 };
@@ -88,7 +88,7 @@ export const CheckboxInitialNotChecked: Story = {
     ...checkboxProps,
     value: false,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(checkboxProps.id)).not.toBeChecked();
   },
 };
@@ -98,13 +98,13 @@ export const CheckboxChangeValue: Story = {
   args: {
     ...checkboxProps,
   },
-  play: async ({ canvas, userEvent }) => {
+  async play({ canvas, userEvent }) {
     await userEvent.click(canvas.getByTestId(checkboxProps.id));
     await expect(canvas.getByTestId(checkboxProps.id)).not.toBeChecked();
     await userEvent.click(canvas.getByTestId(checkboxProps.id));
     await expect(canvas.getByTestId(checkboxProps.id)).toBeChecked();
 
-    // click on the label
+    // Click on the label
     await userEvent.click(canvas.getByText(checkboxProps.label));
     await expect(canvas.getByTestId(checkboxProps.id)).not.toBeChecked();
   },

@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { ButtonProps } from "lib/button/button.types";
+import type { ButtonProps } from "lib/button/button.types";
 
 export function Button(props: ButtonProps) {
   return (
