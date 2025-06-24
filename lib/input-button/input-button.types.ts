@@ -1,5 +1,5 @@
-import { InputFieldProps } from "lib/input-field/input-field.types";
-import { InputLabelProps } from "lib/input-label/input-label.types";
+import { type InputFieldProps } from "lib/input-field/input-field.types";
+import { type InputLabelProps } from "lib/input-label/input-label.types";
 
 type IconButtonProps = {
   icon?: React.ReactNode;

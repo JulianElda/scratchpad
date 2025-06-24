@@ -1,6 +1,6 @@
 import { InputLabel } from "lib/input-label/input-label";
 import { TextAreaField } from "lib/textarea-field/textarea-field";
-import { TextAreaProps } from "lib/textarea/textarea.types";
+import { type TextAreaProps } from "lib/textarea/textarea.types";
 
 export function TextArea(props: TextAreaProps) {
   return (
@@ -8,7 +8,7 @@ export function TextArea(props: TextAreaProps) {
       <InputLabel
         id={props.id}
         label={props.label}
-        hideLabel={!!props.hideLabel}
+        hideLabel={Boolean(props.hideLabel)}
       />
       <div className="mt-1">
         <TextAreaField

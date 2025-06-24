@@ -1,6 +1,6 @@
 import { InputLabel } from "lib/input-label/input-label";
 import { SelectField } from "lib/select-field/select-field";
-import { SelectProps } from "lib/select/select.types";
+import { type SelectProps } from "lib/select/select.types";
 
 export function Select(props: SelectProps) {
   return (
@@ -8,7 +8,7 @@ export function Select(props: SelectProps) {
       <InputLabel
         id={props.id}
         label={props.label}
-        hideLabel={!!props.hideLabel}
+        hideLabel={Boolean(props.hideLabel)}
       />
       <div className="mt-1">
         <SelectField

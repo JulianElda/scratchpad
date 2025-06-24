@@ -1,4 +1,4 @@
-import { FooterProps } from "./footer.types";
+import { type FooterProps } from "./footer.types";
 
 export const footerProps: FooterProps = {
   label: "Julius Polar",

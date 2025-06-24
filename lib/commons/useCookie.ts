@@ -2,13 +2,13 @@ import { useCallback, useState } from "react";
 import Cookies from "js-cookie";
 
 type CookiesReturn = [
-  string | null,
+  string | undefined,
   (newValue: string, options?: Cookies.CookieAttributes) => void,
   () => void,
 ];
 
 export default function useCookie(cookieName: string): CookiesReturn {
-  const [value, setValue] = useState<string | null>(
+  const [value, setValue] = useState<string | undefined>(
     () => Cookies.get(cookieName) || null
   );
 

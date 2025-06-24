@@ -24,7 +24,7 @@ export const TestElements: Story = {
   args: {
     ...buttonPropsPrimary,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(buttonPropsPrimary.id)).toBeInTheDocument();
     await expect(
       canvas.getByLabelText(buttonPropsPrimary.text)
@@ -41,7 +41,7 @@ export const TestClick: Story = {
     ...buttonPropsPrimary,
     onClick: fn(),
   },
-  play: async ({ args, canvas, userEvent }) => {
+  async play({ args, canvas, userEvent }) {
     await userEvent.click(canvas.getByTestId(buttonPropsPrimary.id));
     await expect(args.onClick).toHaveBeenCalled();
   },

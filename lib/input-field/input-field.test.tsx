@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { useState } from "react";
 import { InputField } from "./input-field";
 import { inputFieldProps1, inputFieldProps2 } from "./input-field.mocks";
-import { useState } from "react";
 
 describe("InputField", () => {
   test("renders InputField elements", () => {

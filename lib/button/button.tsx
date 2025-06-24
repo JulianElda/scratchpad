@@ -8,7 +8,9 @@ export function Button(props: ButtonProps) {
       id={props.id}
       data-testid={props.id}
       aria-label={props.text}
-      onClick={() => props.onClick()}
+      onClick={() => {
+        props.onClick();
+      }}
       className={clsx(
         "active:bg-primary-700 focus:ring-primary-300 dark:hover:bg-primary-500 hover:border-primary-500 hover:bg-primary-500 focus-visible:outline-primary-300 cursor-pointer appearance-none rounded-lg p-2 text-lg shadow-sm focus-visible:outline focus-visible:outline-offset-2",
         props.style === "primary" &&

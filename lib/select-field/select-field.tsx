@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { SelectFieldProps } from "lib/select-field/select-field.types";
+import { type SelectFieldProps } from "lib/select-field/select-field.types";
 
 export function SelectField(props: SelectFieldProps) {
   return (
@@ -13,8 +13,10 @@ export function SelectField(props: SelectFieldProps) {
         props.inInputField && "h-full rounded-l-none bg-transparent",
         !props.inInputField && "block pl-3"
       )}
-      onChange={(event) => props.onChange(event.target.value)}>
-      {props.options.slice().map((option) => (
+      onChange={(event) => {
+        props.onChange(event.target.value);
+      }}>
+      {[...props.options].map((option) => (
         <option
           value={option.value}
           key={option.value}>

@@ -12,7 +12,9 @@ function App() {
             id=""
             label="checkboxx"
             value={value}
-            onChange={() => setValue((val) => !val)}
+            onChange={() => {
+              setValue((value_) => !value_);
+            }}
           />
         </div>
       </Card>

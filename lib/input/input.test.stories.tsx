@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { expect } from "storybook/test";
+import { useState } from "react";
+import { type InputProps } from "lib/input/input.types";
 import { Input } from "./input";
 import { inputProps1, inputProps2 } from "./input.mocks";
-import { useState } from "react";
-import { InputProps } from "lib/input/input.types";
 
 const InputTemplate = (args: InputProps) => {
   const [value, setValue] = useState(args.value || "");
 
-  const handleChange = (newVal: string | number) => {
-    setValue(newVal);
+  const handleChange = (newValue: string | number) => {
+    setValue(newValue);
   };
 
   return (
@@ -44,7 +44,7 @@ export const TestElements: Story = {
     ...inputProps1,
     onChange: action("onChange"),
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByLabelText(inputProps1.label)).toBeInTheDocument();
     await expect(canvas.getByText(inputProps1.label)).toBeInTheDocument();
     await expect(canvas.getByTestId(inputProps1.id)).toBeInTheDocument();
@@ -60,7 +60,7 @@ export const TextInitialValue: Story = {
     ...inputProps1,
     onChange: action("onChange"),
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(inputProps1.id)).toHaveValue(
       inputProps1.value
     );
@@ -73,17 +73,17 @@ export const TextChangeValue: Story = {
     ...inputProps1,
     onChange: action("onChange"),
   },
-  play: async ({ canvas, userEvent }) => {
-    // empty value
+  async play({ canvas, userEvent }) {
+    // Empty value
     await userEvent.clear(canvas.getByTestId(inputProps1.id));
     await expect(canvas.getByTestId(inputProps1.id)).toHaveValue("");
 
-    // string
+    // String
     await userEvent.clear(canvas.getByTestId(inputProps1.id));
     await userEvent.type(canvas.getByTestId(inputProps1.id), "test");
     await expect(canvas.getByTestId(inputProps1.id)).toHaveValue("test");
 
-    // email
+    // Email
     await userEvent.clear(canvas.getByTestId(inputProps1.id));
     await userEvent.type(
       canvas.getByTestId(inputProps1.id),
@@ -93,12 +93,12 @@ export const TextChangeValue: Story = {
       "test@example.com"
     );
 
-    // number
+    // Number
     await userEvent.clear(canvas.getByTestId(inputProps1.id));
     await userEvent.type(canvas.getByTestId(inputProps1.id), "1234");
     await expect(canvas.getByTestId(inputProps1.id)).toHaveValue("1234");
 
-    // special characters
+    // Special characters
     await userEvent.clear(canvas.getByTestId(inputProps1.id));
     await userEvent.type(
       canvas.getByTestId(inputProps1.id),
@@ -116,7 +116,7 @@ export const NumberHasInitialValue: Story = {
     ...inputProps2,
     onChange: action("onChange"),
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(inputProps2.id)).toHaveValue(
       inputProps2.value
     );
@@ -129,25 +129,25 @@ export const NumberChangeValue: Story = {
     ...inputProps2,
     onChange: action("onChange"),
   },
-  play: async ({ canvas, userEvent }) => {
-    // empty value
+  async play({ canvas, userEvent }) {
+    // Empty value
     await userEvent.clear(canvas.getByTestId(inputProps2.id));
     await expect(canvas.getByTestId(inputProps2.id)).toHaveValue(null);
 
-    // number
+    // Number
     await userEvent.clear(canvas.getByTestId(inputProps2.id));
     await userEvent.type(canvas.getByTestId(inputProps2.id), "1234");
     await expect(canvas.getByTestId(inputProps2.id)).toHaveValue(1234);
-    // should retain its previous value
+    // Should retain its previous value
     await userEvent.type(canvas.getByTestId(inputProps2.id), "asdf");
     await expect(canvas.getByTestId(inputProps2.id)).toHaveValue(1234);
 
-    // string
+    // String
     await userEvent.clear(canvas.getByTestId(inputProps2.id));
     await userEvent.type(canvas.getByTestId(inputProps2.id), "asdf");
     await expect(canvas.getByTestId(inputProps2.id)).toHaveValue(null);
 
-    // decimal
+    // Decimal
     await userEvent.clear(canvas.getByTestId(inputProps2.id));
     await userEvent.type(canvas.getByTestId(inputProps2.id), "3.14");
     await expect(canvas.getByTestId(inputProps2.id)).toHaveValue(3.14);

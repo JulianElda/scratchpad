@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { isValidNumber } from "lib/commons/commons";
-import { InputFieldProps } from "lib/input-field/input-field.types";
+import { type InputFieldProps } from "lib/input-field/input-field.types";
 
 export function InputField(props: InputFieldProps) {
   const onChange = (value: string) => {
@@ -10,7 +10,7 @@ export function InputField(props: InputFieldProps) {
       if (value === "") {
         props.onChange(value);
       } else if (isValidNumber(value)) {
-        const nextValue = parseFloat(value);
+        const nextValue = Number.parseFloat(value);
         if (
           props.max &&
           props.min &&
@@ -57,8 +57,10 @@ export function InputField(props: InputFieldProps) {
       maxLength={props.maxLength ?? undefined}
       disabled={props.disabled === true}
       placeholder={props.placeholder}
-      autoFocus={!!props.autofocus}
-      onChange={(event) => onChange(event.target.value)}
+      autoFocus={Boolean(props.autofocus)}
+      onChange={(event) => {
+        onChange(event.target.value);
+      }}
       onKeyDown={(event) => props.onKeyDown?.(event.key)}
       className={clsx(
         props.type === "range"

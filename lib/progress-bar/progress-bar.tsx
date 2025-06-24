@@ -1,5 +1,5 @@
 import { InputLabel } from "lib/input-label/input-label";
-import { ProgressBarProps } from "lib/progress-bar/progress-bar.types";
+import { type ProgressBarProps } from "lib/progress-bar/progress-bar.types";
 
 export function ProgressBar(props: ProgressBarProps) {
   const totalRange = props.max - props.min;
@@ -11,7 +11,7 @@ export function ProgressBar(props: ProgressBarProps) {
       <InputLabel
         id={props.id}
         label={props.label}
-        hideLabel={!!props.hideLabel}
+        hideLabel={Boolean(props.hideLabel)}
       />
       <div className="mt-1 h-2 rounded-md bg-gray-200 dark:bg-gray-500">
         <div

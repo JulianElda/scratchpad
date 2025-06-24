@@ -1,4 +1,4 @@
-import { HyperlinkProps } from "./hyperlink.types";
+import { type HyperlinkProps } from "./hyperlink.types";
 
 export const hyperlinkPropsDefault: HyperlinkProps = {
   href: "https://julianelda.github.io",

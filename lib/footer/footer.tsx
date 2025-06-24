@@ -2,7 +2,7 @@ import { clsx } from "clsx";
 import { useDarkMode } from "lib/commons/useDarkMode";
 import { FooterContentDark } from "lib/footer/footer-content-dark";
 import { FooterContentLight } from "lib/footer/footer-content-light";
-import { FooterProps } from "lib/footer/footer.types";
+import { type FooterProps } from "lib/footer/footer.types";
 import { GitHubButtonDark } from "lib/github-button/github-button-dark";
 import { GitHubButtonLight } from "lib/github-button/github-button-light";
 import { Hyperlink } from "lib/hyperlink/hyperlink";

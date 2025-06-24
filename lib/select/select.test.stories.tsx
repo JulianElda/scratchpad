@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect } from "storybook/test";
-import { Select } from "./select";
-import { selectProps1 } from "./select.mocks";
 import { useState } from "react";
-import { SelectProps } from "lib/select/select.types";
+import { type SelectProps } from "lib/select/select.types";
 import userEvent from "@testing-library/user-event";
+import { selectProps1 } from "./select.mocks";
+import { Select } from "./select";
 
 const SelectTemplate = (args: SelectProps) => {
   const [value, setValue] = useState(args.value ?? "");
 
-  const handleChange = (newVal: string) => {
-    setValue(newVal);
+  const handleChange = (newValue: string) => {
+    setValue(newValue);
   };
 
   return (
@@ -42,7 +42,7 @@ export const TestElements: Story = {
   args: {
     ...selectProps1,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(selectProps1.id)).toBeInTheDocument();
     await expect(canvas.getByLabelText(selectProps1.label)).toBeInTheDocument();
     await expect(
@@ -65,7 +65,7 @@ export const TestElementsWithoutLabel: Story = {
     ...selectProps1,
     hideLabel: true,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(selectProps1.id)).toBeInTheDocument();
     await expect(canvas.getByLabelText(selectProps1.label)).toBeInTheDocument();
     await expect(
@@ -87,7 +87,7 @@ export const TestInitialValue: Story = {
   args: {
     ...selectProps1,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByTestId(selectProps1.id)).toHaveValue(
       selectProps1.value
     );
@@ -99,7 +99,7 @@ export const TestChangeValue: Story = {
   args: {
     ...selectProps1,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await userEvent.selectOptions(
       canvas.getByTestId(selectProps1.id),
       selectProps1.options[1].label

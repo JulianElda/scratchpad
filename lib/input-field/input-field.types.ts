@@ -1,4 +1,4 @@
-import { InputFieldTypes } from "lib/commons/commons.types";
+import { type InputFieldTypes } from "lib/commons/commons.types";
 
 export type InputFieldProps = {
   id: string;

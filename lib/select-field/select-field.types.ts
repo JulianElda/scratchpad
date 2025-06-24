@@ -1,10 +1,10 @@
 export type SelectFieldProps = {
   id: string;
   value: string;
-  options: {
+  options: Array<{
     value: string;
     label: string;
-  }[];
+  }>;
   inInputField?: boolean;
   onChange: (value: string) => void;
 };

@@ -23,7 +23,7 @@ export const CardWithContent: Story = {
   args: {
     children: <p>Card content</p>,
   },
-  play: async ({ canvas }) => {
+  async play({ canvas }) {
     await expect(canvas.getByText("Card content")).toBeInTheDocument();
   },
 };

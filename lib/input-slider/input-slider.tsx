@@ -1,4 +1,4 @@
-import { InputSliderProps } from "lib/input-slider/input-slider.types";
+import { type InputSliderProps } from "lib/input-slider/input-slider.types";
 import { InputLabel } from "lib/input-label/input-label";
 import { InputField } from "lib/input-field/input-field";
 
@@ -8,7 +8,7 @@ export function InputSlider(props: InputSliderProps) {
       <InputLabel
         id={props.id}
         label={props.label}
-        hideLabel={!!props.hideLabel}
+        hideLabel={Boolean(props.hideLabel)}
         value={props.value}
       />
       <div>

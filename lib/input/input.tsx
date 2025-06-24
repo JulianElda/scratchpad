@@ -1,6 +1,6 @@
 import { InputField } from "lib/input-field/input-field";
 import { InputLabel } from "lib/input-label/input-label";
-import { InputProps } from "lib/input/input.types";
+import { type InputProps } from "lib/input/input.types";
 
 export function Input(props: InputProps) {
   return (
@@ -8,7 +8,7 @@ export function Input(props: InputProps) {
       <InputLabel
         id={props.id}
         label={props.label}
-        hideLabel={!!props.hideLabel}
+        hideLabel={Boolean(props.hideLabel)}
       />
       <div className="mt-1">
         <InputField

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { mockMatchMedia, mockStorage } from "lib/test-utils";
 import { Footer } from "./footer";
 import { footerProps } from "./footer.mocks";
-import { mockMatchMedia, mockStorage } from "lib/test-utils";
 
 describe("Footer", () => {
   mockStorage("localStorage");
