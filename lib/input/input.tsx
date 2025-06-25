@@ -20,7 +20,6 @@ export function Input(props: InputProps) {
           disabled={props.disabled}
           maxLength={props.maxLength}
           placeholder={props.placeholder}
-          autofocus={props.autofocus}
           onChange={(value) => props.onChange?.(value)}
           onKeyDown={(value) => props.onKeyDown?.(value)}
         />

@@ -16,7 +16,6 @@ export function InputButton(props: InputButtonProps) {
             id={props.id}
             type={props.type}
             value={props.value}
-            autofocus={props.autofocus}
             onChange={(value) => props.onChange?.(value)}
             onKeyDown={(value) => props.onKeyDown?.(value)}
             withIconLeft={true}

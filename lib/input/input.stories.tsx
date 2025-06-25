@@ -25,15 +25,6 @@ export const InputText: Story = {
   },
 };
 
-export const InputAutofocus: Story = {
-  name: "Input with autofocus",
-  args: {
-    ...inputProps1,
-    hideLabel: false,
-    autofocus: true,
-  },
-};
-
 export const InputNumber: Story = {
   name: "Input type number",
   args: {

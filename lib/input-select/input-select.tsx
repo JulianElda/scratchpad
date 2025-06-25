@@ -16,7 +16,6 @@ export function InputSelect(props: InputSelectProps) {
           id={props.inputId}
           type={props.type}
           value={props.inputValue}
-          autofocus={props.autofocus}
           onChange={(value) => props.onInputChange?.(value)}
           onKeyDown={(value) => props.onInputKeydown?.(value)}
         />

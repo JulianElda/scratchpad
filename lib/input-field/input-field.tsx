@@ -57,7 +57,6 @@ export function InputField(props: InputFieldProps) {
       maxLength={props.maxLength ?? undefined}
       disabled={props.disabled === true}
       placeholder={props.placeholder}
-      autoFocus={!!props.autofocus}
       onChange={(event) => onChange(event.target.value)}
       onKeyDown={(event) => props.onKeyDown?.(event.key)}
       className={clsx(

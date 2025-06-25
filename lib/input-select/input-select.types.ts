@@ -10,7 +10,6 @@ export type InputSelectProps = {
   inputValue: string | number;
   selectValue: string;
   options: Option[];
-  autofocus?: boolean;
   onInputChange?: (value: string | number) => void;
   onInputKeydown?: (key: string | number) => void;
   onSelectChange?: (value: string) => void;

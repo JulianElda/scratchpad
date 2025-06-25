@@ -14,7 +14,6 @@ export function TextArea(props: TextAreaProps) {
         <TextAreaField
           id={props.id}
           value={props.value}
-          autofocus={props.autofocus}
           onChange={(value) => props.onChange?.(value)}
           onKeyDown={(value) => props.onKeyDown?.(value)}
         />

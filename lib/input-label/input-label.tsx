@@ -12,7 +12,7 @@ export function InputLabel(props: InputLabelProps) {
         )}>
         {props.label}
       </label>
-      {props.value && <label>{props.value}</label>}
+      {props.value && <span>{props.value}</span>}
     </div>
   );
 }

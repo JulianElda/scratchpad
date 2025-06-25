@@ -13,7 +13,6 @@ export function TextAreaField(props: TextAreaFieldProps) {
       name={props.id}
       data-testid={props.id}
       value={props.value}
-      autoFocus={!!props.autofocus}
       onChange={(event) => onChange(event.target.value)}
       onKeyDown={(event) => props.onKeyDown?.(event.key)}
       className="form-textarea block w-full appearance-none rounded-md border-1 border-ink-gray bg-white p-2 px-3 text-ink-black ring-inset focus:border-primary-300 focus:ring-1 focus:ring-primary-300 focus:ring-inset dark:bg-slate-700 dark:text-ink-white"
