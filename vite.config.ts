@@ -1,14 +1,14 @@
 /// <reference types="vitest/config" />
 /// <reference types="vitest" />
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
-import path from "path";
 
 // https://vitejs.dev/config/
 import { fileURLToPath } from "node:url";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import react from "@vitejs/plugin-react";
+import path, { resolve } from "path";
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+
 const dirname =
   typeof __dirname !== "undefined"
     ? __dirname
@@ -27,7 +27,7 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./lib/test-setup.ts",
-    workspace: [
+    projects: [
       {
         extends: true,
         plugins: [
