@@ -1,8 +1,8 @@
 import { clsx } from "clsx";
 import { useDarkMode } from "lib/commons/useDarkMode";
+import type { FooterProps } from "lib/footer/footer.types";
 import { FooterContentDark } from "lib/footer/footer-content-dark";
 import { FooterContentLight } from "lib/footer/footer-content-light";
-import { FooterProps } from "lib/footer/footer.types";
 import { GitHubButtonDark } from "lib/github-button/github-button-dark";
 import { GitHubButtonLight } from "lib/github-button/github-button-light";
 import { Hyperlink } from "lib/hyperlink/hyperlink";
@@ -16,7 +16,7 @@ export function Footer(props: FooterProps) {
   return (
     <footer
       className={clsx(
-        "bg-app-background-light dark:bg-app-background-dark flex items-center p-2 sm:fixed sm:right-0 sm:bottom-0 sm:left-0 sm:mx-auto",
+        "flex items-center bg-app-background-light p-2 sm:fixed sm:right-0 sm:bottom-0 sm:left-0 sm:mx-auto dark:bg-app-background-dark",
         props.extraClass
       )}>
       <div className="flex flex-1 items-center gap-1">

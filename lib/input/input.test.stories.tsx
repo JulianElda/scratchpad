@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { InputProps } from "lib/input/input.types";
+import { useState } from "react";
 import { action } from "storybook/actions";
 import { expect } from "storybook/test";
 import { Input } from "./input";
 import { inputProps1, inputProps2 } from "./input.mocks";
-import { useState } from "react";
-import { InputProps } from "lib/input/input.types";
 
 const InputTemplate = (args: InputProps) => {
   const [value, setValue] = useState(args.value || "");

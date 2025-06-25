@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
 import Cookies from "js-cookie";
+import { useCallback, useState } from "react";
 
 type CookiesReturn = [
   string | null,
@@ -7,7 +7,7 @@ type CookiesReturn = [
   () => void,
 ];
 
-export default function useCookie(cookieName: string): CookiesReturn {
+export function useCookie(cookieName: string): CookiesReturn {
   const [value, setValue] = useState<string | null>(
     () => Cookies.get(cookieName) || null
   );

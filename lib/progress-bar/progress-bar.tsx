@@ -1,5 +1,5 @@
 import { InputLabel } from "lib/input-label/input-label";
-import { ProgressBarProps } from "lib/progress-bar/progress-bar.types";
+import type { ProgressBarProps } from "lib/progress-bar/progress-bar.types";
 
 export function ProgressBar(props: ProgressBarProps) {
   const totalRange = props.max - props.min;
@@ -17,7 +17,7 @@ export function ProgressBar(props: ProgressBarProps) {
         <div
           id={props.id}
           data-testid={props.id}
-          className="bg-primary-500 h-2 rounded-md"
+          className="h-2 rounded-md bg-primary-500"
           style={{
             width: `${currentPercent}%`,
           }}

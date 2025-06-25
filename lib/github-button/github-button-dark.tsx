@@ -11,7 +11,7 @@ export function GitHubButtonDark(props: GitHubButtonDarkProps) {
       target="_blank"
       rel="noreferrer"
       aria-label={props.href}
-      className="bg-app-background-light size-8 rounded-md p-1">
+      className="size-8 rounded-md bg-app-background-light p-1">
       <GithubMarkDark className="size-6" />
     </a>
   );

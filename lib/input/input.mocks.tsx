@@ -4,7 +4,7 @@ import {
   inputFieldProps3,
   inputFieldProps4,
 } from "lib/input-field/input-field.mocks";
-import { InputProps } from "./input.types";
+import type { InputProps } from "./input.types";
 
 export const inputProps1: InputProps = {
   ...inputFieldProps1,

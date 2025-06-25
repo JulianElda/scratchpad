@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { Hyperlink } from "./hyperlink";
 import {
-  hyperlinkPropsDefault,
   hyperlinkPropsAsterisk,
+  hyperlinkPropsDefault,
   hyperlinkPropsNoAsterisk,
 } from "./hyperlink.mocks";
 
@@ -14,7 +14,7 @@ describe("Hyperlink", () => {
       hyperlinkPropsDefault.href
     );
     expect(
-      screen.getByText(hyperlinkPropsDefault.title + "*")
+      screen.getByText(`${hyperlinkPropsDefault.title}*`)
     ).toBeInTheDocument();
   });
 
@@ -25,7 +25,7 @@ describe("Hyperlink", () => {
       hyperlinkPropsAsterisk.href
     );
     expect(
-      screen.getByText(hyperlinkPropsAsterisk.title + "*")
+      screen.getByText(`${hyperlinkPropsAsterisk.title}*`)
     ).toBeInTheDocument();
   });
 

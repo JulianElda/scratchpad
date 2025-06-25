@@ -1,4 +1,4 @@
-import { ButtonProps } from "./button.types";
+import type { ButtonProps } from "./button.types";
 
 export const buttonPropsPrimary: ButtonProps = {
   type: "button",

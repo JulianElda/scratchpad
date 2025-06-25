@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import userEvent from "@testing-library/user-event";
+import type { SelectProps } from "lib/select/select.types";
+import { useState } from "react";
 import { expect } from "storybook/test";
 import { Select } from "./select";
 import { selectProps1 } from "./select.mocks";
-import { useState } from "react";
-import { SelectProps } from "lib/select/select.types";
-import userEvent from "@testing-library/user-event";
 
 const SelectTemplate = (args: SelectProps) => {
   const [value, setValue] = useState(args.value ?? "");

@@ -1,5 +1,5 @@
+import { useCookie } from "lib/commons/useCookie";
 import { useEffect, useState } from "react";
-import useCookie from "lib/commons/useCookie";
 
 const COOKIE_KEY = "dark-theme";
 const DARKMODE_CLASS = "dark";

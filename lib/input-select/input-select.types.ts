@@ -1,4 +1,4 @@
-import { InputFieldTypes, Option } from "lib/commons/commons.types";
+import type { InputFieldTypes, Option } from "lib/commons/commons.types";
 
 export type InputSelectProps = {
   type: InputFieldTypes;

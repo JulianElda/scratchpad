@@ -1,4 +1,4 @@
-import { CheckboxProps } from "./checkbox.types";
+import type { CheckboxProps } from "./checkbox.types";
 
 export const checkboxProps: CheckboxProps = {
   id: "checkbox-id",

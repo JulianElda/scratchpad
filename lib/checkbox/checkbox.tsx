@@ -1,4 +1,4 @@
-import { CheckboxProps } from "lib/checkbox/checkbox.types";
+import type { CheckboxProps } from "lib/checkbox/checkbox.types";
 import { InputLabel } from "lib/input-label/input-label";
 
 export function Checkbox(props: CheckboxProps) {
@@ -12,7 +12,7 @@ export function Checkbox(props: CheckboxProps) {
           data-testid={props.id}
           checked={props.value}
           onChange={(event) => props.onChange(event.target.checked)}
-          className="form-checkbox focus:border-primary-300 focus:ring-primary-300 ring-ink-500 accent-primary-500 text-primary-500 dark:bg-ink-500 inline-block size-4 rounded-md border-0 bg-white p-1 ring-1 ring-inset focus:ring-1 focus:ring-inset"
+          className="form-checkbox inline-block size-4 rounded-md border-0 bg-white p-1 text-primary-500 accent-primary-500 ring-1 ring-ink-500 ring-inset focus:border-primary-300 focus:ring-1 focus:ring-primary-300 focus:ring-inset dark:bg-ink-500"
         />
       </div>
       <div className="ml-1 leading-6">

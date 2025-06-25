@@ -1,6 +1,6 @@
 import { InputLabel } from "lib/input-label/input-label";
+import type { TextAreaProps } from "lib/textarea/textarea.types";
 import { TextAreaField } from "lib/textarea-field/textarea-field";
-import { TextAreaProps } from "lib/textarea/textarea.types";
 
 export function TextArea(props: TextAreaProps) {
   return (

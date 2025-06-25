@@ -35,7 +35,7 @@ describe("InputSelect", () => {
     render(<InputSelect {...props} />);
 
     await user.type(screen.getByTestId(props.inputId), "a");
-    expect(onInputChangeMock).toHaveBeenLastCalledWith(props.inputValue + "a");
+    expect(onInputChangeMock).toHaveBeenLastCalledWith(`${props.inputValue}a`);
 
     await user.selectOptions(
       screen.getByTestId(props.selectId),

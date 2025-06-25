@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { InputLabelProps } from "lib/input-label/input-label.types";
+import type { InputLabelProps } from "lib/input-label/input-label.types";
 
 export function InputLabel(props: InputLabelProps) {
   return (
@@ -7,7 +7,7 @@ export function InputLabel(props: InputLabelProps) {
       <label
         htmlFor={props.id}
         className={clsx(
-          "font-heading mr-auto font-bold",
+          "mr-auto font-bold font-heading",
           props.hideLabel && "sr-only"
         )}>
         {props.label}

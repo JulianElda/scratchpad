@@ -22,6 +22,6 @@ describe("TextArea", () => {
     render(<TextArea {...props} />);
 
     await user.type(screen.getByTestId(props.id), "a");
-    expect(onChangeMock).toHaveBeenLastCalledWith(props.value + "a");
+    expect(onChangeMock).toHaveBeenLastCalledWith(`${props.value}a`);
   });
 });

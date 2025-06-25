@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { ButtonProps } from "lib/button/button.types";
+import type { ButtonProps } from "lib/button/button.types";
 
 export function Button(props: ButtonProps) {
   return (
@@ -10,11 +10,11 @@ export function Button(props: ButtonProps) {
       aria-label={props.text}
       onClick={() => props.onClick()}
       className={clsx(
-        "active:bg-primary-700 focus:ring-primary-300 dark:hover:bg-primary-500 hover:border-primary-500 hover:bg-primary-500 focus-visible:outline-primary-300 cursor-pointer appearance-none rounded-lg p-2 text-lg shadow-sm focus-visible:outline focus-visible:outline-offset-2",
+        "cursor-pointer appearance-none rounded-lg p-2 text-lg shadow-sm hover:border-primary-500 hover:bg-primary-500 focus:ring-primary-300 focus-visible:outline focus-visible:outline-primary-300 focus-visible:outline-offset-2 active:bg-primary-700 dark:hover:bg-primary-500",
         props.style === "primary" &&
           "border-primary-700 bg-primary-700 text-ink-white",
         props.style === "secondary" &&
-          "border-ink-500 bg-card-background-light text-ink-black dark:bg-slate dark:text-ink-white border hover:text-white"
+          "border border-ink-500 bg-card-background-light text-ink-black hover:text-white dark:bg-slate dark:text-ink-white"
       )}>
       {props.text}
     </button>

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { CheckboxProps } from "lib/checkbox/checkbox.types";
+import type { CheckboxProps } from "lib/checkbox/checkbox.types";
 import { useState } from "react";
 import { expect } from "storybook/test";
 import { Checkbox } from "./checkbox";
